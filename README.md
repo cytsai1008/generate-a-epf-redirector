@@ -4,7 +4,7 @@
 
 聽到建議了。寫個一個對付這種霸道 10MB 限制的程式了，用處是直接轉址到容量大的雲端硬碟。
 
-<https://epf-redirector.pan93.tk>
+<https://cytsai1008.github.io/generate-a-epf-redirector/>
 
 使用影片在這：<https://www.youtube.com/watch?v=99NQXYC_0tY>
 
