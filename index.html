@@ -1,53 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="./assets/image/faviocn.svg">
-    <title>Generate a (EPF) redirector!</title>
 
-    <!-- Style: Bulma -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"
-    />
-    <!-- Style: Padding for desktops -->
-    <link rel="stylesheet" href="./assets/style/padding.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="./assets/image/faviocn.svg">
+  <title>Generate a (EPF) redirector!</title>
 
-    <!-- Scripts -->
-    <script defer src="./assets/templates/template.js"></script>
-    <script defer src="./assets/scripts/main.js"></script>
-  </head>
-  <body>
-    <section class="section">
-      <div class="container">
-        <h1 class="title">Generate a (EPF) redirector!</h1>
-        <p class="subtitle">
-          Maintainced by 
-          <a href="https://github.com/cytsai1008/generate-a-epf-redirector"
-            >CYTsai</a
-          ><br \>
-          Original version made by <a href="https://github.com/pan93412/generate-a-epf-redirector">pan93412</a>
-        </p>
-        <div class="field">
-          <label class="label">作品名稱 | PROJECT NAME</label>
-          <div class="control">
-            <input type="text" class="input" id="project-name" />
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">下載連結 | ACCESS LINK</label>
-          <div class="control">
-            <input type="text" class="input" id="project-addr" />
-          </div>
-        </div>
-        <div class="field">
-          <button class="button" id="download-code">下載成果 | DOWNLOAD</button>
+  <!-- Style: Bulma -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" />
+  <!-- Style: Padding for desktops -->
+  <link rel="stylesheet" href="./assets/style/padding.css" />
+
+  <!-- Scripts -->
+  <script defer src="./assets/templates/template.js"></script>
+  <script defer src="./assets/scripts/main.js"></script>
+</head>
+
+<body onload="CheckValue()">
+  <section class="section">
+    <div class="container">
+      <h1 class="title">Generate a (EPF) redirector!</h1>
+      <p class="subtitle">
+        Maintainced by
+        <a href="https://github.com/cytsai1008/generate-a-epf-redirector">CYTsai</a><br \>
+        Original version made by <a href="https://github.com/pan93412/generate-a-epf-redirector">pan93412</a>
+      </p>
+      <div class="field">
+        <label class="label">作品名稱 | PROJECT NAME</label>
+        <div class="control">
+          <input type="text" class="input" id="project-name" />
         </div>
       </div>
-    </section>
-<!--
+      <div class="field">
+        <label class="label">下載連結 | ACCESS LINK</label>
+        <div class="control">
+          <input type="text" class="input" id="project-addr" oninput="CheckValue()"/>
+        </div>
+      </div>
+      <div class="field">
+        <button class="button" id="download-code">下載成果 | DOWNLOAD</button>
+      </div>
+    </div>
+  </section>
+  <!--
     <section class="section">
       <h2 class="title is-3">用法</h2>
       <ol>
@@ -72,5 +69,15 @@
       <img src="assets/image/10mb-is-too-small.png" />
     </section>
   -->
-  </body>
+  <script>
+    function CheckValue() {
+      if (document.getElementById("project-addr").value === "") {
+        document.getElementById('download-code').disabled = true;
+      } else {
+        document.getElementById('download-code').disabled = false;
+      }
+    }
+  </script>
+</body>
+
 </html>
