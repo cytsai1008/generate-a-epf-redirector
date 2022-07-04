@@ -30,13 +30,13 @@
       <div class="field">
         <label class="label">作品名稱 | PROJECT NAME</label>
         <div class="control">
-          <input type="text" class="input" id="project-name" />
+          <input type="text" class="input" id="project-name" oninput="CheckValue()" />
         </div>
       </div>
       <div class="field">
         <label class="label">下載連結 | ACCESS LINK</label>
         <div class="control">
-          <input type="text" class="input" id="project-addr" oninput="CheckValue()"/>
+          <input type="text" class="input" id="project-addr" oninput="CheckValue()" placeholder="https://example.com" />
         </div>
       </div>
       <div class="field">
@@ -71,7 +71,7 @@
   -->
   <script>
     function CheckValue() {
-      if (document.getElementById("project-addr").value === "") {
+      if (document.getElementById("project-addr").value === "" || document.getElementById("project-name").value === "") {
         document.getElementById('download-code').disabled = true;
       } else {
         document.getElementById('download-code').disabled = false;
